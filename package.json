@@ -1,0 +1,30 @@
+{
+  "name": "Employee_Profile",
+  "version": "1.0.0",
+  "description": "This is a application that will generate information about certain employees and print them onto the webpage.",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib",
+    "test": "test"
+  },
+  "dependencies": {
+    "inquirer": "^8.1.1"
+  },
+  "devDependencies": {
+    "jest": "^27.0.6"
+  },
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JMagic-Learner/Employee_Profile.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JMagic-Learner/Employee_Profile/issues"
+  },
+  "homepage": "https://github.com/JMagic-Learner/Employee_Profile#readme"
+}
