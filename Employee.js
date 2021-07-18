@@ -24,6 +24,10 @@ class Employee {
     }
 
     getRole(){
+        if (this.role == "Manager") {
+            console.log( `${this.role}`);
+            return  `${this.role}`;
+        }
         console.log(`${this.role}`);
         return  `${this.role}`;
     }
