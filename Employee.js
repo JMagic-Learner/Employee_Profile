@@ -34,10 +34,11 @@ class Employee {
 
 }
 
-const employee = new Employee('Jason', 34 , 'MaJason93@gmail.com', "Coder");
-employee.getName();
-employee.getID();
-employee.getEmail();
-employee.getRole();
+//Initial testing for to see if the values for Employee, is passed through to Employee.test.js
+//const employee = new Employee();
+//employee.getName();
+//employee.getID();
+//employee.getEmail();
+//employee.getRole();
 
 module.exports = Employee;

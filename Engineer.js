@@ -21,7 +21,7 @@ class Engineer extends Employee {
 
     getGitHub(){
         console.log(this.githubUser);
-        return this.githubUser;
+        return `${this.githubUser}`;
     }
 
     getEngineerName(){
@@ -31,8 +31,9 @@ class Engineer extends Employee {
 
     }
 
-const engineer = new Engineer("Viktor" , "VikHans");
-engineer.getEngineerName();
-engineer.getGitHub();
+//Initial testing for to see if the value Viktor, is passed through to Engineer.test.js
+//const engineer = new Engineer("Viktor" , "VikHans");
+//engineer.getEngineerName();
+//engineer.getGitHub();
 
 module.exports = Engineer;

@@ -20,7 +20,7 @@ class Manager extends Employee {
     }
 
     getOfficeNumber(){
-         console.log(`${this.office}`);
+        console.log(`${this.office}`);
         return this.office;
     }
 
