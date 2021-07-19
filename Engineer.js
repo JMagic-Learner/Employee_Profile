@@ -1,13 +1,20 @@
 const Employee = require('./Employee');
 
 class Engineer extends Employee {
-    constructor( EngineerName,  github) {
+    constructor( EngineerName, id, email, role , github) {
        const Engineer = EngineerName;
+       const identification = id;
+       const Email = email;
        const githubUser = github;
+       const Role = role;
     
-        super(Engineer, githubUser);
+        super(Engineer, identification, Email, Role, githubUser);
             this.Engineer =Engineer;
+            this.id = identification;
             this.githubUser = githubUser;
+            this.email = Email;
+            this.role = Role;
+
         
       //  if (office > 0) {
      //       this.role = "manager";
@@ -24,10 +31,6 @@ class Engineer extends Employee {
         return `${this.githubUser}`;
     }
 
-    getEngineerName(){
-        console.log(`${this.Engineer}`);
-        return `${this.Engineer}`;
-    }
 
     }
 

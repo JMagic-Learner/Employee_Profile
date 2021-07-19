@@ -1,0 +1,26 @@
+.container {
+    display: flex;
+    flex-direction: row;
+    margin:auto;
+    background-color: black;
+    opacity:50%;
+    width:85%;
+}
+
+h1 {
+    font-size: xx-large;
+    text-align: center;
+}
+
+li {
+    color:white;
+    list-style:none;
+}
+
+.employee-box {
+    text-align:center;
+    background-color: plum;
+    opacity:75%;
+    margin:auto;
+    padding-right:1%;
+}
