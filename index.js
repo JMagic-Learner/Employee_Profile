@@ -11,7 +11,16 @@ const EntrySequence = [
     "Enter employee email address",
     "Enter employee role",
     "Do you have more employees"
-];
+]
+
+const InitialManager = [
+    "Enter name of team manager",
+    "Enter manager ID or number",
+    "Enter manager email address",
+    "Enter employee role",
+    "Enter manager office"
+    
+]
 
 const RoleSpecific = [
     "What is the manager's office number",
@@ -30,12 +39,12 @@ const Employee3 =[];
 const Employee4 =[];
 const Employee5 =[];
 
-function startPrompt() {
+ 
+
+async function startPrompt() {
+   
     console.log("Employee Information Sequence");
-    inquirer
-    
-    
-        .prompt([
+    const main = await inquirer.prompt([
             {
                 type: 'input',
                 message: EntrySequence[0],
@@ -63,39 +72,42 @@ function startPrompt() {
                 ]
             }
         ])
-    
-    
-    .then((response) => {
-        if (repetitions == 0) {
-            Employee1.push("Name " + response.name)
-            Employee1.push("ID # " + response.EmployeeID)
-            Employee1.push("Email "+ response.EmailAddress)
-            Employee1.push("Role " + response.EmployeeRole)
+
+    .then((main) => {
+        /*if (repetitions == 0) {
+            Employee1.push("Name " + main.name)
+            Employee1.push("ID # " + main.EmployeeID)
+            Employee1.push("Email "+ main.EmailAddress)
+            Employee1.push("Role " + main.EmployeeRole)
             repeatPrompt(response)
-        } else if (repetitions == 1 ) {
-            Employee2.push("Name " + response.name)
-            Employee2.push("ID # " + response.EmployeeID)
-            Employee2.push("Email "+ response.EmailAddress)
-            Employee2.push("Role " + response.EmployeeRole)
-            repeatPrompt(response)
+        } else */if (repetitions == 1 ) {
+            Employee2.push("Name " + main.name)
+            Employee2.push("ID # " + main.EmployeeID)
+            Employee2.push("Email "+ main.EmailAddress)
+            Employee2.push("Role " + main.EmployeeRole)
+            
+            repeatPrompt(main)
         } else if (repetitions == 2) {
-            Employee3.push("Name " + response.name)
-            Employee3.push("ID # " + response.EmployeeID)
-            Employee3.push("Email "+ response.EmailAddress)
-            Employee3.push("Role " + response.EmployeeRole)
-            repeatPrompt(response)
+            Employee3.push("Name " + main.name)
+            Employee3.push("ID # " + main.EmployeeID)
+            Employee3.push("Email "+ main.EmailAddress)
+            Employee3.push("Role " + main.EmployeeRole)
+            
+            repeatPrompt(main)
         } else if (repetitions == 3) {
-            Employee4.push("Name " + response.name)
-            Employee4.push("ID # " + response.EmployeeID)
-            Employee4.push("Email "+ response.EmailAddress)
-            Employee4.push("Role " + response.EmployeeRole)
-            repeatPrompt(response)
+            Employee4.push("Name " + main.name)
+            Employee4.push("ID # " + main.EmployeeID)
+            Employee4.push("Email "+ main.EmailAddress)
+            Employee4.push("Role " + main.EmployeeRole)
+           
+            repeatPrompt(main)
         } else if (repetitions == 4) {
-            Employee5.push("Name " + response.name)
-            Employee5.push("ID # " + response.EmployeeID)
-            Employee5.push("Email "+ response.EmailAddress)
-            Employee5.push("Role " + response.EmployeeRole)
-            repeatPrompt(response)
+            Employee5.push("Name " + main.name)
+            Employee5.push("ID # " + main.EmployeeID)
+            Employee5.push("Email "+ main.EmailAddress)
+            Employee5.push("Role " + main.EmployeeRole)
+            
+            repeatPrompt(main)
         } else if (repetitions > 4) {
             console.log("Yall need to chill, this is just a demo application.")
             writeToFile(Employee1, Employee2, Employee3, Employee4, Employee5);
@@ -108,9 +120,9 @@ function startPrompt() {
     
     }
     
-async function repeatPrompt(response) {
+async function repeatPrompt(main) {
    
-        if (response.EmployeeRole == "Manager") {
+        if (main.EmployeeRole == "Manager") {
             console.log("The manager specific prompts need to initiate");
             const ManagerPrompts = await inquirer.prompt([
                 {
@@ -120,10 +132,12 @@ async function repeatPrompt(response) {
                 }
             ])
 
-            if (repetitions == 0) {
-                Employee1.push("Office # "+ ManagerPrompts.rolespecific)
+            //if (repetitions == 0) {
+    
+                //Employee1.push("Office #" +  ManagerPrompts.rolespecific)
              
-            } else if (repetitions == 1 ) {
+            //} else 
+            if (repetitions == 1 ) {
                 Employee2.push("Office # "+ ManagerPrompts.rolespecific)
                
             } else if (repetitions == 2) {
@@ -138,7 +152,7 @@ async function repeatPrompt(response) {
             }
 
         }
-        else if (response.EmployeeRole == "Engineer") {
+        else if (main.EmployeeRole == "Engineer") {
             console.log("The Engineer specific prompts need to initiate");
             const EngineerPrompts = await inquirer.prompt([
                 {
@@ -148,24 +162,24 @@ async function repeatPrompt(response) {
                 }
             ])
             if (repetitions == 0) {
-                Employee1.push("Github User" + EngineerPrompts.rolespecific)
+                Employee1.push( "<a href ='https://github.com/" + `${EngineerPrompts.rolespecific}` + "'>Github User"+`${EngineerPrompts.rolespecific}`+"</a>")
              
             } else if (repetitions == 1 ) {
-                Employee2.push("Github User" + EngineerPrompts.rolespecific)
+                Employee2.push("<a href ='https://github.com/" + `${EngineerPrompts.rolespecific}` + "'>Github User"+`${EngineerPrompts.rolespecific}`+"</a>")
                
             } else if (repetitions == 2) {
-                Employee3.push("Github User" + EngineerPrompts.rolespecific)
+                Employee3.push("<a href ='https://github.com/" + `${EngineerPrompts.rolespecific}` + "'>Github User"+`${EngineerPrompts.rolespecific}`+"</a>")
                
             } else if (repetitions == 3) {
-                Employee4.push("Github User" + EngineerPrompts.rolespecific)
+                Employee4.push("<a href ='https://github.com/" + `${EngineerPrompts.rolespecific}` + "'>Github User"+`${EngineerPrompts.rolespecific}`+"</a>")
                
             } else if (repetitions == 4) {
-                Employee5.push("Github User" + EngineerPrompts.rolespecific)
+                Employee5.push("<a href ='https://github.com/" + `${EngineerPrompts.rolespecific}` + "'>Github User"+`${EngineerPrompts.rolespecific}`+"</a>")
                
             }
            
         }
-        else if (response.EmployeeRole == "Intern") {
+        else if (main.EmployeeRole == "Intern") {
             console.log("The Intern specific prompts need to initiate");
             const InternPrompts = await inquirer.prompt([
                 {
@@ -203,8 +217,7 @@ async function repeatPrompt(response) {
         ])
 
         
-               
-        
+            
         
         if (answer.again == false) {
  
@@ -277,11 +290,78 @@ module.exports = Intern;
 module.exports = Engineer;
 module.exports = Employee;
 
-startPrompt();
+function or(){
+    if (repetitions == 0 ){
+        inquirer.prompt([
+            {
+                type: 'input',
+                message: InitialManager[0],
+                name: 'name',
+            },
+            {
+                type: 'input',
+                message: InitialManager[1],
+                name: 'EmployeeID',
+            },
+            {
+                type: 'input',
+                message: InitialManager[2],
+                name: 'EmailAddress',
+            },
+            {
+                type: 'input',
+                message: InitialManager[4],
+                name: 'Office',
+            },
+            {
+                type: 'list',
+                message: InitialManager[3],
+                name: 'EmployeeRole',
+                choices: [
+                    'Employee',
+                    'Engineer',
+                    'Manager',
+                    'Intern'
+                ]
+            },
+            {
+                type: 'confirm',
+                message: EntrySequence[4],
+                name: 'again',
+            }
+        ])
+        .then((response) => {
+          
+                Employee1.push("Name " + response.name)
+                Employee1.push("ID # " + response.EmployeeID)
+                Employee1.push("Email "+ response.EmailAddress)
+                Employee1.push("Office" + response.Office);
+                Employee1.push("Role " + response.EmployeeRole)
+            
+            if (response.again == false) {
+                writeToFile(Employee1, Employee2, Employee3, Employee4, Employee5);
+                return;
+            }
+            repetitions++;
+            startPrompt();
+            return;
+        });
 
 
+
+
+    }
+
+
+}
+
+or();
 function writeToFile(Employee1, Employee2, Employee3, Employee4, Employee5) {
-   
+   console.log(Employee1)
+   console.log(Employee2)
+   console.log(Employee3)
+   console.log(Employee4)
+   console.log(Employee5)
     fs.writeFile('./dist/index.html', 
       
           `
@@ -301,7 +381,7 @@ function writeToFile(Employee1, Employee2, Employee3, Employee4, Employee5) {
               <div class = "container">
               <div class = "employee-box">
                   <ul>
-                      <li id = "name"> ${Employee1[0]}</li>
+                      <li id = "name">${Employee1[0]}</li>
                       <li id = "id"> ${Employee1[1]}</li>
                       <li id = "email">${Employee1[2]}</li>
                       <li id = "role">${Employee1[3]}</li>
