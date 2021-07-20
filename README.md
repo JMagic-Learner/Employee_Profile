@@ -2,7 +2,7 @@
 # Employee_Profile
 ![NPM](https://img.shields.io/npm/l/inquirer)
 
-VIDEO: https://drive.google.com/file/d/1rV0BTCyoXX4mrb6dylT1QYjcp0Gd4bGq/view
+VIDEO: https://drive.google.com/file/d/1JshSf4by10YJRirmRkKLduasKkQm1oAW/view
 ## Description
 Hello, my name is Jason Ma. This application is called Employee_Profile.
               
